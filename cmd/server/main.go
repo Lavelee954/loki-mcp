@@ -70,10 +70,10 @@ func main() {
 	// Start unified HTTP server
 	go func() {
 		addr := fmt.Sprintf(":%s", port)
-		log.Printf("Starting unified MCP server on http://localhost%s", addr)
-		log.Printf("SSE Endpoint (legacy): http://localhost%s/sse", addr)
-		log.Printf("SSE Message Endpoint: http://localhost%s/mcp", addr)
-		log.Printf("Streamable HTTP Endpoint: http://localhost%s/stream", addr)
+		log.Printf("Starting unified MCP server on http://0.0.0.0%s", addr)
+		log.Printf("SSE Endpoint (legacy): http://0.0.0.0%s/sse", addr)
+		log.Printf("SSE Message Endpoint: http://0.0.0.0%s/mcp", addr)
+		log.Printf("Streamable HTTP Endpoint: http://0.0.0.0%s/stream", addr)
 
 		if err := http.ListenAndServe(addr, mux); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("HTTP server error: %v", err)
